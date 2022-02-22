@@ -1,0 +1,7 @@
+lsy:
+  gateway:
+    shouldSkipUrls:
+      - /oauth/**
+      - /sso/**
+      - /home/**
+      - /pms/**

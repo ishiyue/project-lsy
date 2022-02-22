@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lsy.test.user.mapper.AuthMapper">
+    <sql id="tableName">
+        dms_Auth
+    </sql>
+
+    <sql id="baseColumn">
+        id,name,pid,seq,type,project_type,is_open,is_delete,create_by,update_by,gmt_create,gmt_update
+    </sql>
+
+</mapper>

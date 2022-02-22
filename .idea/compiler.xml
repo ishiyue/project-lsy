@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="user-interface" />
+        <module name="passport-interface" />
+        <module name="common" />
+        <module name="timer-web" />
+        <module name="timer-interface" />
+        <module name="passport-service" />
+        <module name="lsy-gateway" />
+        <module name="timer-service" />
+        <module name="passport-web" />
+        <module name="user-servicce" />
+        <module name="user-web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="passpoet-web" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="common" options="" />
+      <module name="lsy-gateway" options="" />
+      <module name="lsy-user" options="-parameters" />
+      <module name="passpoet-web" options="-parameters" />
+      <module name="passport-web" options="-parameters" />
+      <module name="timer-web" options="-parameters" />
+      <module name="user-interface" options="" />
+      <module name="user-servicce" options="" />
+      <module name="user-web" options="" />
+    </option>
+  </component>
+</project>

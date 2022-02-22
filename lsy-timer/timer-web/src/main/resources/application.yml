@@ -1,0 +1,6 @@
+server:
+  port: 8083
+  servlet:
+    context-path: /timer
+#??????
+spring.application.name: jobs-service
