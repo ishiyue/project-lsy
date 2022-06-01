@@ -13,7 +13,14 @@
         <option value="$PROJECT_DIR$/lsy-user/user-interface/pom.xml" />
         <option value="$PROJECT_DIR$/lsy-user/user-servicce/pom.xml" />
         <option value="$PROJECT_DIR$/lsy-user/user-web/pom.xml" />
+        <option value="$PROJECT_DIR$/shardingSphere/pom.xml" />
+        <option value="$PROJECT_DIR$/lsy-elasticJob/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/passport/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">

@@ -9,19 +9,20 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>passport</module>
         <module>lsy-timer</module>
         <module>lsy-gateway</module>
         <module>lsy-user</module>
         <module>common</module>
+        <module>shardingSphere</module>
+        <module>lsy-elasticJob</module>
     </modules>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <java.version>1.8</java.version>
-        <spring-boot.version>2.0.4.RELEASE</spring-boot.version>
-        <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
+        <spring-boot.version>2.0.7.RELEASE</spring-boot.version>
+        <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
         <dependencies.version>0.2.2.RELEASE</dependencies.version>
         <nacos-config.version>2.1.2.RELEASE</nacos-config.version>
         <nacos.version>2.1.2.RELEASE</nacos.version>
@@ -37,6 +38,14 @@
         <quartz.version>2.6.1</quartz.version>
         <redis.version>2.6.2</redis.version>
         <poi.version>3.17</poi.version>
+        <apache.common.lang3.version>3.9</apache.common.lang3.version>
+        <commons-collections4>4.4</commons-collections4>
+        <consul>1.4.5</consul>
+        <mongodb>3.3.4</mongodb>
+        <redission>3.11.6</redission>
+        <elastic.job>2.1.5</elastic.job>
+        <druid>1.2.3</druid>
+        <sharding.jdbc>4.1.1</sharding.jdbc>
     </properties>
 
     <dependencyManagement>
@@ -135,6 +144,55 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-data-redis</artifactId>
                 <version>${redis.version}</version>
+            </dependency>
+            <!--apache commons-->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${apache.common.lang3.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>${commons-collections4}</version>
+            </dependency>
+            <!--分布式锁consul-->
+            <dependency>
+                <groupId>com.ecwid.consul</groupId>
+                <artifactId>consul-api</artifactId>
+                <version>${consul}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-mongodb -->
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-mongodb</artifactId>
+                <version>${mongodb}</version>
+            </dependency>
+            <!-- 以后使用Redisson作为所有分布式锁，分布式框架等功能框架 -->
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-boot-starter</artifactId>
+                <version>${redission}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.dangdang</groupId>
+                <artifactId>elastic-job-lite-lifecycle</artifactId>
+                <version>${elastic.job}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.dangdang</groupId>
+                <artifactId>elastic-job-lite-spring</artifactId>
+                <version>${elastic.job}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.shardingsphere</groupId>
+                <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
+                <version>${sharding.jdbc}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

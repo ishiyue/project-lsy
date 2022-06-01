@@ -4,3 +4,15 @@ server:
     context-path: /timer
 #??????
 spring.application.name: jobs-service
+zookeeper:
+  serverList: 127.0.0.1:2181
+  namespace: example-elastic-job-test
+#elastic job
+#simpleJob类型的job
+simpleJob:
+  mySimpleJob:
+    name: mySimpleJob
+    cron: 0/15 * * * * ?
+    shardingTotalCount: 3
+    shardingItemParameters: 0=a,1=b,2=c
+    jobParameters: helloWorld

@@ -11,11 +11,10 @@
     <artifactId>lsy-user</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
-        <module>user-servicce</module>
+        <module>user-service</module>
         <module>user-interface</module>
         <module>user-web</module>
     </modules>
-    <name>passport</name>
     <packaging>pom</packaging>
 
     <properties>

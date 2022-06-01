@@ -1,1 +1,1 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.distribution.management.system.common.config.BeanConfig,com.distribution.management.system.common.config.UserInterceptorConfig
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.lsy.test.system.common.config.BeanConfig,com.lsy.test.system.common.config.UserInterceptorConfig

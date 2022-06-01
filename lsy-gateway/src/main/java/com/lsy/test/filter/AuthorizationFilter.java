@@ -56,13 +56,14 @@ public class AuthorizationFilter implements GlobalFilter, Ordered, InitializingB
 
     /**
      * 放开不需要授权的路径
+     *
      * @param currentUrl
      * @return
      */
     private boolean shouldSkip(String currentUrl) {
         PathMatcher pathMatcher = new AntPathMatcher();
-        for (String shipPath:notAuthUrlProperties.getShouldSkipUrls()){
-            if(pathMatcher.match(shipPath,currentUrl)){
+        for (String shipPath : notAuthUrlProperties.getShouldSkipUrls()) {
+            if (pathMatcher.match(shipPath, currentUrl)) {
                 return true;
             }
         }
