@@ -7,17 +7,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="timer-interface" />
-        <module name="lsy-gateway" />
-        <module name="timer-service" />
-        <module name="user-service" />
-        <module name="passport-web" />
         <module name="user-interface" />
         <module name="common" />
         <module name="shardingSphere" />
+        <module name="SpringCloudStream" />
         <module name="lsy-elasticJob" />
-        <module name="timer-web" />
+        <module name="lsy-gateway" />
         <module name="passport-service" />
+        <module name="user-service" />
+        <module name="passport-web" />
         <module name="user-web" />
       </profile>
     </annotationProcessing>
@@ -26,10 +24,14 @@
       <module name="passport-interface" target="1.8" />
       <module name="passport-service" target="1.8" />
       <module name="passport-web" target="1.8" />
+      <module name="timer-interface" target="1.8" />
+      <module name="timer-service" target="1.8" />
+      <module name="timer-web" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="SpringCloudStream" options="" />
       <module name="common" options="" />
       <module name="lsy-gateway" options="" />
       <module name="lsy-user" options="" />

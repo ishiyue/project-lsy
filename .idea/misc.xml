@@ -7,7 +7,6 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/passport/passport-web/pom.xml" />
         <option value="$PROJECT_DIR$/lsy-gateway/pom.xml" />
-        <option value="$PROJECT_DIR$/lsy-timer/timer-web/pom.xml" />
         <option value="$PROJECT_DIR$/common/pom.xml" />
         <option value="$PROJECT_DIR$/lsy-user/pom.xml" />
         <option value="$PROJECT_DIR$/lsy-user/user-interface/pom.xml" />
@@ -15,10 +14,13 @@
         <option value="$PROJECT_DIR$/lsy-user/user-web/pom.xml" />
         <option value="$PROJECT_DIR$/shardingSphere/pom.xml" />
         <option value="$PROJECT_DIR$/lsy-elasticJob/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringCloudStream/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/lsy-timer/timer-interface/pom.xml" />
+        <option value="$PROJECT_DIR$/lsy-timer/timer-service/pom.xml" />
         <option value="$PROJECT_DIR$/passport/pom.xml" />
       </set>
     </option>

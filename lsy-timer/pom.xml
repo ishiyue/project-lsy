@@ -11,11 +11,6 @@
 
     <artifactId>lsy-timer</artifactId>
     <packaging>pom</packaging>
-    <modules>
-        <module>timer-interface</module>
-        <module>timer-service</module>
-        <module>timer-web</module>
-    </modules>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

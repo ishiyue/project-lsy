@@ -1,0 +1,4 @@
+elastic-job:
+  zookeeper:
+    serverLists: localhost:2181
+    namespace: elecwatt

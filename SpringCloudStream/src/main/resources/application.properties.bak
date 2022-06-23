@@ -1,0 +1,61 @@
+server.port=8080
+#\u8FD9\u51E0\u4E2A\u662F\u9ED8\u8BA4\u914D\u7F6E\u3002 \u4E0D\u914D\u4E5F\u884C\u3002
+#spring.rabbitmq.host=localhost
+#spring.rabbitmq.port=5672
+#spring.rabbitmq.username=guest
+#spring.rabbitmq.password=guest
+
+#\u914D\u7F6Ebinder \u4E00\u4E2ABinder\u5BF9\u5E94\u4E00\u4E2A\u6D88\u606F\u4E2D\u95F4\u4EF6\u6E90
+#\u5F53\u53EA\u6709\u4E00\u4E2Abinder\u6E90\u65F6\uFF0C\u4F1A\u9ED8\u8BA4\u8BFB\u53D6spring.rabbitmq.***\u5C5E\u6027\u3002
+#spring.cloud.stream.binders.<bindername>.<prop>=value
+spring.cloud.stream.binders.demobinder.type=rabbit
+#spring.cloud.stream.binders.demobinder.environment.spring.rabbitmq.addresses=192.168.232.128:5672,192.168.232.129:5672,192.168.232.130:5672
+spring.cloud.stream.binders.demobinder.environment.spring.rabbitmq.host=localhost
+spring.cloud.stream.binders.demobinder.environment.spring.rabbitmq.port=5672
+spring.cloud.stream.binders.demobinder.environment.spring.rabbitmq.username=admin
+spring.cloud.stream.binders.demobinder.environment.spring.rabbitmq.password=admin
+spring.cloud.stream.binders.demobinder.environment.spring.rabbitmq.virtual-host=/mirror
+#\u9ED8\u8BA4\u7684binder\u3002
+spring.cloud.stream.default-binder=demobinder
+ 
+#=====================\u914D\u7F6Ebinding \u4E00\u4E2Abinding\u5BF9\u5E94\u4E00\u4E2A\u961F\u5217
+# \u8FD9\u4E2Aoutput\u5C31\u5BF9\u5E94Source\u7C7B\u91CC\u7684\u5B57\u7B26\u4E32OUTPUT stream\u4E2D\u9ED8\u8BA4\u7684\u53D1\u9001\u961F\u5217
+#\u6307\u5B9Aoutput\u8FD9\u4E2Abinding\u7684exchange \u9ED8\u8BA4\u4F1A\u521B\u5EFA\u4E00\u4E2Atopic\u7C7B\u578B\u7684exchange\u3002\u7136\u540E\u7ED1\u5B9A\u7684routingKey\u4E3A#
+spring.cloud.stream.bindings.output.destination=scstreamExchange
+#\u6307\u5B9A\u961F\u5217\u540D\u3002\u5982\u679C\u6CA1\u6709\u6307\u5B9A\u4F1A\u751F\u6210\u4E00\u4E2A\u5F88\u957F\u7684\u9ED8\u8BA4\u540D\u5B57\u7684\u961F\u5217\u3002
+spring.cloud.stream.bindings.output.group=myoutput
+
+#\u6307\u5B9A\u53C2\u4E0E\u6D88\u606F\u5206\u533A\u7684\u6D88\u8D39\u7AEF\u8282\u70B9\u6570\u91CF
+spring.cloud.stream.bindings.output.producer.partition-count=2
+#\u53EA\u6709\u6D88\u8D39\u7AEF\u5206\u533AID\u4E3A1\u7684\u6D88\u8D39\u7AEF\u80FD\u63A5\u6536\u5230\u6D88\u606F
+spring.cloud.stream.bindings.output.producer.partition-key-expression=0
+#\u65B0\u7248\u672C\u4E2D\u8FD9\u4E2A\u5C5E\u6027\u5DF2\u7ECF\u53D6\u6D88\uFF0C\u6539\u4E3A\u901A\u8FC7\u5206\u533A\u8868\u8FBE\u5F0F\u81EA\u52A8\u5224\u65AD
+#spring.cloud.stream.bindings.output.producer.partitioned=true
+
+#\u8FD9\u4E2Ainput\u5C31\u5BF9\u5E94Sink.INPUT strem\u4E2D\u9ED8\u8BA4\u7684\u6D88\u8D39\u961F\u5217
+spring.cloud.stream.bindings.input.destination=scstreamExchange
+spring.cloud.stream.bindings.input.group=myinput
+#\u542F\u52A8\u6D88\u8D39\u5206\u533A \u65B0\u7248\u672C\u8FD9\u4E2A\u5C5E\u6027\u5DF2\u7ECF\u53D6\u6D88\uFF0C\u6539\u4E3A\u7531\u5206\u533A\u8868\u8FBE\u5F0F\u81EA\u52A8\u5224\u65AD
+spring.cloud.stream.bindings.input.consumer.partitioned=true
+#\u53C2\u4E0E\u5206\u533A\u7684\u6D88\u8D39\u7AEF\u8282\u70B9\u4E2A\u6570
+spring.cloud.stream.bindings.input.consumer.instance-count=2
+#\u8BBE\u7F6E\u8BE5\u5B9E\u4F8B\u7684\u6D88\u8D39\u7AEF\u5206\u533AID
+spring.cloud.stream.bindings.input.consumer.instance-index=1
+spring.cloud.stream.bindings.input.consumer.concurrency=5
+spring.cloud.stream.bindings.input.consumer.maxAttempts=1
+
+#=====================\u914D\u7F6Econsumer \u914D\u7F6Ebinding\u7684consumer\u5C5E\u6027
+#spring.cloud.stream.rabbit.bindings.<bindingName>.consumer.<prop>=value
+
+#=====================\u914D\u7F6Erabbit\u5BF9\u5E94\u7684binding\u7684producer\u5C5E\u6027
+#spring.cloud.stream.rabbit.bindings.<bindingName>.producer.<prop>=value
+
+#\u7528\u6B7B\u4FE1\u961F\u5217\u5B9E\u73B0\u5EF6\u8FDF\u961F\u5217
+#spring.cloud.stream.rabbit.bindings.output.producer.autoBindDlq=true
+#spring.cloud.stream.rabbit.bindings.output.producer.ttl=3000
+#spring.cloud.stream.rabbit.bindings.output.producer.deadLetterExchange=DlqExchange
+#spring.cloud.stream.rabbit.bindings.output.producer.deadLetterQueueName=DlqExchange.dlQueue
+#\u6D88\u606F\u7ECF\u8FC73\u79D2\u540E\uFF0C\u4F1A\u81EA\u52A8\u8F6C\u5165\u5230\u6B7B\u4FE1\u961F\u5217DlqExchange.dlQueue\uFF0C\u7136\u540E\u53EF\u4EE5\u5B9A\u4E49\u6D88\u8D39\u8005\u6765\u8FDB\u884C\u6D88\u8D39\u3002
+#spring.cloud.stream.bindings.input.destination=DlqExchange
+#spring.cloud.stream.bindings.input.group=dlQueue
+
